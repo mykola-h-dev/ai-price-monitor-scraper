@@ -1,7 +1,7 @@
 """Minimal JSON-mode LLM client for Google Gemini or OpenAI, using only `requests`.
 
 Provider from environment variables (never from files written by this project):
-  - GEMINI_API_KEY  -> Gemini (GEMINI_MODEL, default gemini-2.5-flash)
+  - GEMINI_API_KEY  -> Gemini (GEMINI_MODEL, default gemini-3.5-flash)
   - OPENAI_API_KEY  -> OpenAI Chat Completions (OPENAI_MODEL, default gpt-4o-mini)
 Without a key `is_available()` is False and callers use the offline selector mode.
 Keys are never logged; error messages contain only status codes.
@@ -46,7 +46,7 @@ def generate_json(system_prompt, user_prompt):
 
 
 def _gemini(system_prompt, user_prompt):
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
     body = {
         "systemInstruction": {"parts": [{"text": system_prompt}]},
         "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],

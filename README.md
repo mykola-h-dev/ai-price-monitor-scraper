@@ -115,7 +115,7 @@ Exit codes: `0` ok, `1` start page not found, `2` configuration problem, `3` ski
 
 | Variable | Purpose |
 |---|---|
-| `GEMINI_API_KEY` / `GEMINI_MODEL` | AI extraction with Gemini (default `gemini-2.5-flash`) |
+| `GEMINI_API_KEY` / `GEMINI_MODEL` | AI extraction with Gemini (default `gemini-3.5-flash`) |
 | `OPENAI_API_KEY` / `OPENAI_MODEL` | AI extraction with OpenAI (default `gpt-4o-mini`), used if no Gemini key |
 | `SLACK_WEBHOOK_URL` | also post change alerts to Slack (off when empty) |
 | `SHEETS_WEBAPP_URL`, `SHEETS_SHARED_SECRET` | `--push` target (see below) |
