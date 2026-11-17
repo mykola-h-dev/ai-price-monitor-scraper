@@ -1,0 +1,8 @@
+=== 2026-11-17T10:52:31 | to: price-alerts (outbox) ===
+Price watch for http://127.0.0.1:8020/catalogue/page-1.html: 1 new, 1 removed, 2 price change(s), 1 stock change(s)
+~ Harbour Lights: £14.99 -> £11.99 (-20.0%)
+~ Northern Gardens: £27.95 -> £29.95 (+7.2%)
+! A Year of Bread: now out of stock
++ New: Winter Kitchen (£16.00)
+- Removed: Salt and Iron
+

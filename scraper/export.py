@@ -61,12 +61,12 @@ def _cell(value):
     return value
 
 
-def push_to_sheet(webapp_url, secret, rows, batch_size=200):
-    """Upsert rows into a Google Sheet through apps_script/Code.gs (keyed by URL)."""
+def push_to_sheet(webapp_url, secret, rows, batch_size=200, columns=COLUMNS, key=KEY):
+    """Upsert rows into a Google Sheet through apps_script/Code.gs (matched on the key column)."""
     total = {"added": 0, "updated": 0}
     for start in range(0, len(rows), batch_size):
-        batch = [{col: _cell(r.get(col)) for col in COLUMNS} for r in rows[start:start + batch_size]]
-        resp = requests.post(webapp_url, json={"token": secret, "key": KEY, "columns": COLUMNS, "rows": batch},
+        batch = [{col: _cell(r.get(col)) for col in columns} for r in rows[start:start + batch_size]]
+        resp = requests.post(webapp_url, json={"token": secret, "key": key, "columns": columns, "rows": batch},
                              timeout=60)
         resp.raise_for_status()
         data = resp.json()

@@ -1,0 +1,16 @@
+# docker compose run --rm scraper                                   # offline demo
+# docker compose run --rm scraper python -m scraper.main --pages 2  # real catalogue run
+# Keys and webhooks come from your shell environment or a local .env (never baked into the image).
+services:
+  scraper:
+    build: .
+    volumes:
+      - ./output:/app/output
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL:-}
+      SHEETS_WEBAPP_URL: ${SHEETS_WEBAPP_URL:-}
+      SHEETS_SHARED_SECRET: ${SHEETS_SHARED_SECRET:-}

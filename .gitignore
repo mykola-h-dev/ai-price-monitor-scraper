@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 output/books.csv
 logs/
+output/demo/
+output/extracted.*
+output/*.snapshot.json
+output/report.html
+output/outbox.log
