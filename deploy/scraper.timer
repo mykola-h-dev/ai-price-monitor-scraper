@@ -1,0 +1,12 @@
+# systemd timer: run scraper.service every day at 06:30 (local time).
+# Persistent=true runs a missed job after the machine was switched off.
+[Unit]
+Description=Daily catalogue scrape
+
+[Timer]
+OnCalendar=*-*-* 06:30:00
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target

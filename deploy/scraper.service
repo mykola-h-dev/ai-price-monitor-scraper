@@ -1,0 +1,13 @@
+# systemd service: runs the scraper once. Install as a *user* unit:
+#   mkdir -p ~/.config/systemd/user && cp deploy/scraper.* ~/.config/systemd/user/
+#   (edit WorkingDirectory below to where you cloned the project)
+#   systemctl --user daemon-reload && systemctl --user enable --now scraper.timer
+[Unit]
+Description=Scrape product catalogue into CSV / Google Sheet
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/scraper-to-sheet
+ExecStart=/usr/bin/python3 -m scraper.main --pages 0 --details --push
