@@ -4,6 +4,8 @@
 
 **A polite, scheduled scraper that turns a product catalogue (or any page you describe in plain English) into a clean, typed spreadsheet - and tells you what changed since yesterday: new items, removed items, price drops and rises, stock changes.**
 
+> **Live demo:** https://ai-price-monitor-scraper.onrender.com/ — the HTML change report from a fresh day 1 → day 2 run on a demo shop *(free hosting: the first open after a quiet spell takes up to a minute while the server wakes up; fictional sample data, offline mode, no API keys)*
+
 ![HTML run report: 1 new, 1 removed, 2 price changes, 1 stock change, rows highlighted](docs/report.png)
 
 *Screenshot: the HTML report after the second run of the offline demo (`python -m scraper.demo`) against a small fictional shop served on 127.0.0.1. All shop names, titles and prices are made up for the demo.*
